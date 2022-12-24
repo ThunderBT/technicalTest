@@ -1,0 +1,34 @@
+@import '../../../../../styles/mixins';
+
+.page-container {
+  padding: 0 20px;
+}
+
+.task-element {
+  @include text-ellipsis();
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 16px;
+}
+
+.create-button {
+  margin-bottom: 16px;
+}
+
+.category-select {
+  max-width: 200px;
+}
+
+.check-icon {
+  color: forestgreen;
+}

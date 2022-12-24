@@ -1,0 +1,33 @@
+<div class="page-container">
+  <button
+    class="create-button"
+    mat-stroked-button
+    color="primary"
+    (click)="onTaskCreate()"
+  >
+    Create
+  </button>
+
+  <div class="filters">
+    <mat-select class="category-select" [formControl]="category">
+      <mat-option value="">All</mat-option>
+      <mat-option value="house">House</mat-option>
+      <mat-option value="bureaucracy">Bureaucracy</mat-option>
+    </mat-select>
+
+    <mat-checkbox [formControl]="onlyDone">Only done</mat-checkbox>
+  </div>
+
+  <h2>Tasks</h2>
+
+  <mat-list>
+    <mat-list-item
+      *ngFor="let task of tasksList"
+      (click)="onTaskDetails(task.id)"
+    >
+      <div class="task-element" matRipple>{{ task.label }}</div>
+
+      <mat-icon *ngIf="task.done" class="check-icon">check</mat-icon>
+    </mat-list-item>
+  </mat-list>
+</div>

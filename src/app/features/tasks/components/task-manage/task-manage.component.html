@@ -1,0 +1,29 @@
+<form class="form-container" [formGroup]="taskForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Label</mat-label>
+    <input matInput formControlName="label" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <input matInput formControlName="description" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="category">
+      <mat-option value="house">House</mat-option>
+      <mat-option value="bureaucracy">Bureaucracy</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button
+    mat-flat-button
+    color="primary"
+    class="submit"
+    (click)="onSubmit()"
+    [disabled]="taskForm.invalid"
+  >
+    {{ task ? 'Edit' : 'Create'}}
+  </button>
+</form>

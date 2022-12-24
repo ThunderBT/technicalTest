@@ -1,0 +1,28 @@
+<div class="page-container">
+  <h2>{{ task.label }}</h2>
+
+  <p>{{ task.description }}</p>
+
+  <p>Status: {{ task.done ? "Done" : "Undone" }}</p>
+
+  <p *ngIf="task.done">{{ task.done }}</p>
+
+  <button
+    class="mark-button"
+    mat-stroked-button
+    *ngIf="!task.done"
+    color="primary"
+    (click)="markTaskAsDone()"
+  >
+    Mark as done
+  </button>
+
+  <div class="actions">
+    <button mat-stroked-button color="primary" (click)="onTaskEdit()">
+      Edit
+    </button>
+    <button mat-stroked-button color="warn" (click)="onTaskDelete()">
+      Delete
+    </button>
+  </div>
+</div>
